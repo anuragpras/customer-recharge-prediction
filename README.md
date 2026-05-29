@@ -16,7 +16,7 @@ The project uses LightGBM for binary classification and generates:
 * Decile distribution reports
 * Model evaluation metrics
 * CRM-ready prediction files
-<img width="1536" height="1024" alt="fe6d9f88-8733-4b4a-b213-3c10df09b62c" src="https://github.com/user-attachments/assets/75fa9075-febc-45f4-85d0-62b8403c50e0" />
+
 
 The primary goal is to help marketing, CRM, growth, and retention teams identify high-intent users and improve campaign efficiency.
 
