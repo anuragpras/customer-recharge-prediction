@@ -1,4 +1,6 @@
-<img width="1536" height="1024" alt="fe6d9f88-8733-4b4a-b213-3c10df09b62c" src="https://github.com/user-attachments/assets/7e21c1aa-111e-4ac3-8d7f-01811a3c5a15" /># Recharge Propensity Model (0 → 1 Conversion Prediction)
+## Recharge Propensity Model (0 → 1 Conversion Prediction)
+
+<img width="1536" height="1024" alt="fe6d9f88-8733-4b4a-b213-3c10df09b62c" src="https://github.com/user-attachments/assets/7e21c1aa-111e-4ac3-8d7f-01811a3c5a15" />
 
 ## Overview
 
