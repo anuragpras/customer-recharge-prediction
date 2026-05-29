@@ -1,6 +1,7 @@
-# Recharge Propensity Model (0 → 1 Conversion Prediction)
+<img width="1536" height="1024" alt="fe6d9f88-8733-4b4a-b213-3c10df09b62c" src="https://github.com/user-attachments/assets/7e21c1aa-111e-4ac3-8d7f-01811a3c5a15" /># Recharge Propensity Model (0 → 1 Conversion Prediction)
 
 ## Overview
+
 
 This repository contains an end-to-end Machine Learning pipeline for predicting which users are most likely to make their first recharge or first purchase.
 
@@ -13,6 +14,7 @@ The project uses LightGBM for binary classification and generates:
 * Decile distribution reports
 * Model evaluation metrics
 * CRM-ready prediction files
+<img width="1536" height="1024" alt="fe6d9f88-8733-4b4a-b213-3c10df09b62c" src="https://github.com/user-attachments/assets/75fa9075-febc-45f4-85d0-62b8403c50e0" />
 
 The primary goal is to help marketing, CRM, growth, and retention teams identify high-intent users and improve campaign efficiency.
 
