@@ -1,150 +1,483 @@
-# Open 0→1 Recharge Propensity Model
+# Recharge Propensity Model (0 → 1 Conversion Prediction)
 
-A generic open-source **0→1 conversion propensity model** for predicting which non-paying / never-recharged users are most likely to make their **first recharge**.
+## Overview
 
-This project is adapted from an internal LightGBM recharge prediction workflow and converted into a reusable GitHub portfolio project.
+This repository contains an end-to-end Machine Learning pipeline for predicting which users are most likely to make their first recharge or first purchase.
 
-## What this model does
+The project uses LightGBM for binary classification and generates:
 
-The model scores users from `0` to `1`.
+* User-level propensity scores
+* Ranked targeting lists
+* Feature importance analysis
+* Threshold performance analysis
+* Decile distribution reports
+* Model evaluation metrics
+* CRM-ready prediction files
 
-- Higher score = higher probability of first recharge
-- Lower score = lower probability of first recharge
+The primary goal is to help marketing, CRM, growth, and retention teams identify high-intent users and improve campaign efficiency.
 
-## Target definition
+---
+
+## Problem Statement
+
+Many businesses acquire large numbers of users, but only a small percentage make their first purchase.
+
+Instead of targeting all users equally, this model predicts:
+
+> Which users are most likely to make their first purchase?
+
+The resulting probability score can be used to:
+
+* Prioritize CRM campaigns
+* Optimize marketing budgets
+* Improve conversion rates
+* Personalize user journeys
+* Improve customer targeting efficiency
+
+---
+
+## Features Used
+
+The model can utilize behavioral, demographic, acquisition, and device-related attributes.
+
+### User Profile
+
+* Age
+* Gender
+* Country
+* State
+* City
+
+### Signup Information
+
+* Signup Day
+* Signup Time
+
+### Consultation Behavior
+
+* IsFreeConsultationTaken
+* HasTakenChatConsultation
+* HasTakenCallConsultation
+* HasTakenOtherConsultation
+
+### User Engagement
+
+* HasRated
+* HasReviewed
+* HadPositiveInteraction
+* HadNegativeInteraction
+* HasUsedGift
+
+### Device Information
+
+* DeviceType
+* device_manufacturer
+* device_name
+* os_name
+* os_version
+* app_version
+* platform
+* store
+
+### Activity Metrics
+
+* lifetime_session_count
+* session_count
+* time_spent
+
+### Acquisition Data
+
+* Acquisition Source
+* Campaign
+* Campaign Adgroup
+* Campaign Group
+
+---
+
+## Model Architecture
+
+### Algorithm
+
+LightGBM Classifier
+
+### Objective
+
+Binary Classification
+
+Target Variable:
 
 ```text
-HasRecharged = 1 → User completed first recharge within the target window
-HasRecharged = 0 → User did not complete first recharge within the target window
+HasRecharged
+
+0 = Did Not Recharge
+1 = Recharged
 ```
 
-This makes it a **0→1 model**, not a 1→Many or churn model.
+### Key Components
 
-## Included outputs
+* Train/Test Split
+* Missing Value Handling
+* Categorical Encoding
+* Feature Importance Analysis
+* Early Stopping
+* Threshold Optimization
+* Decile Analysis
+* Probability Scoring
 
-The mock output folder includes:
+---
 
-1. `feature_importance_mock.csv`
-2. `train_percentile_distribution_mock.csv`
-3. `test_percentile_distribution_mock.csv`
-4. `prediction_percentile_distribution_mock.csv`
-5. `feature_level_score_bucket_analysis_mock.csv`
-6. `all_predicted_users_mock.csv`
-7. `Model_Analysis_Report_Mock.xlsx`
-
-## Project structure
+## Project Structure
 
 ```text
 open_0_to_1_recharge_model/
+│
+├── data/
+│   ├── train_data.csv
+│   ├── predict_data.csv
+│   └── sample_data_dictionary.xlsx
+│
+├── models/
+│   └── trained_model.pkl
+│
+├── notebooks/
+│   └── model_exploration.ipynb
+│
+├── outputs/
+│   ├── all_predicted_users.csv
+│   ├── top_10pct_users.csv
+│   ├── top_20pct_users.csv
+│   └── Model_Analysis_Report.xlsx
+│
+├── src/
+│   ├── train.py
+│   ├── predict.py
+│   ├── preprocessing.py
+│   ├── feature_engineering.py
+│   └── utils.py
+│
 ├── config.yaml
 ├── requirements.txt
-├── README.md
-├── data/
-│   ├── sample_train.csv
-│   └── sample_prediction.csv
-├── src/
-│   ├── generate_sample_data.py
-│   ├── train_model.py
-│   └── predict.py
-├── outputs/
-│   └── mock_run/
-│       ├── feature_importance_mock.csv
-│       ├── train_percentile_distribution_mock.csv
-│       ├── test_percentile_distribution_mock.csv
-│       ├── prediction_percentile_distribution_mock.csv
-│       ├── feature_level_score_bucket_analysis_mock.csv
-│       ├── all_predicted_users_mock.csv
-│       └── Model_Analysis_Report_Mock.xlsx
-└── models/
+└── README.md
 ```
 
-## Setup
+---
+
+## Input Data Requirements
+
+### Training Dataset
+
+The training dataset must contain:
+
+```text
+UserLoginId
+HasRecharged
+```
+
+along with all feature columns used by the model.
+
+Example:
+
+| UserLoginId | Age | Gender | Session_Count | HasRecharged |
+| ----------- | --- | ------ | ------------- | ------------ |
+| 1001        | 25  | Male   | 10            | 1            |
+| 1002        | 31  | Female | 3             | 0            |
+
+### Prediction Dataset
+
+The prediction dataset should contain:
+
+```text
+UserLoginId
+```
+
+and all feature columns.
+
+It should not contain:
+
+```text
+HasRecharged
+```
+
+Example:
+
+| UserLoginId | Age | Gender | Session_Count |
+| ----------- | --- | ------ | ------------- |
+| 2001        | 28  | Male   | 15            |
+| 2002        | 35  | Female | 4             |
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/recharge-propensity-model.git
+
+cd recharge-propensity-model
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Generate sample data
+---
 
-```bash
-python src/generate_sample_data.py
+## Requirements
+
+Main libraries:
+
+```text
+pandas
+numpy
+lightgbm
+scikit-learn
+matplotlib
+openpyxl
+pyyaml
 ```
 
-## Train model
+Install:
 
 ```bash
-python src/train_model.py --config config.yaml
+pip install -r requirements.txt
 ```
 
-## Predict users
+---
+
+## Running The Model
+
+### Step 1: Add Input Files
+
+Place your datasets inside the data folder:
+
+```text
+data/
+├── train_data.csv
+└── predict_data.csv
+```
+
+### Step 2: Run Training Script
 
 ```bash
-python src/predict.py --config config.yaml
+python src/train.py
 ```
 
-## Main business use cases
+The script will prompt for:
 
-This type of 0→1 model can be used for:
-
-- First recharge targeting
-- CRM campaign prioritization
-- New user activation
-- Promotional offer selection
-- Reducing blanket campaign costs
-- Prioritizing high-intent users for WhatsApp, push, email, or call campaigns
-
-## Output interpretation
-
-### Score buckets
-
-| Score Bucket | Meaning |
-|---|---|
-| 0.80–1.00 | Very high first-recharge intent |
-| 0.60–0.80 | High intent |
-| 0.40–0.60 | Medium intent |
-| 0.20–0.40 | Low intent |
-| 0.00–0.20 | Very low intent |
-
-### Percentile distribution
-
-Percentiles split users into ranked groups by probability score.
-
-For example:
-
-- Top 10% users = highest-scoring users
-- Bottom 10% users = lowest-scoring users
-
-## Feature-level score bucket analysis
-
-This output helps explain how user behavior changes across score buckets.
+```text
+Enter path for Train+Test dataset CSV file:
+```
 
 Example:
 
 ```text
-High score users may have:
-- More app launches
-- More sessions
-- More time spent
-- Higher consultation initiation rate
-- More notification clicks
+data/train_data.csv
 ```
 
-## Model used
-
-Default model:
+Then:
 
 ```text
-LightGBM Binary Classifier
+Enter path for Predictions dataset CSV file:
 ```
 
-Why LightGBM?
+Example:
 
-- Fast on large tabular datasets
-- Handles nonlinear relationships
-- Works well with mixed numeric and categorical features
-- Provides feature importance
-- Good for CRM propensity scoring use cases
+```text
+data/predict_data.csv
+```
 
-## Notes
+### Step 3: Select Export Percentage
 
-The sample data and mock outputs are synthetic and only for testing/demo purposes.
+Enter the percentage of highest-scoring users you want exported.
+
+Example:
+
+```text
+10
+```
+
+The model will generate:
+
+```text
+top_10pct_users.csv
+```
+
+containing the highest propensity users.
+
+---
+
+## Outputs Generated
+
+### all_predicted_users.csv
+
+Contains scores for all users in the prediction dataset.
+
+Example:
+
+| UserLoginId | Score |
+| ----------- | ----- |
+| 10001       | 0.91  |
+| 10002       | 0.73  |
+| 10003       | 0.18  |
+
+---
+
+### top_Xpct_users.csv
+
+Contains only the highest propensity users.
+
+Examples:
+
+```text
+top_5pct_users.csv
+top_10pct_users.csv
+top_20pct_users.csv
+```
+
+Typically used for CRM campaigns, push notifications, remarketing, and conversion programs.
+
+---
+
+### Model_Analysis_Report.xlsx
+
+Generated automatically and contains multiple sheets:
+
+#### Feature_Importance
+
+Ranks features by contribution to model predictions.
+
+#### Prediction_Decile_Summary
+
+Distribution of prediction scores across deciles.
+
+#### Test_Decile_Summary
+
+Model performance across test-set deciles.
+
+#### Dataset_Info
+
+Training, testing, and prediction dataset sizes.
+
+#### Threshold_Analysis
+
+Performance metrics across multiple score thresholds.
+
+---
+
+## Model Evaluation
+
+The model automatically evaluates:
+
+* Accuracy
+* True Positives
+* False Positives
+* True Negatives
+* False Negatives
+* Probability Distribution
+* Decile Capture Rates
+* Feature Importance
+
+Thresholds evaluated:
+
+```text
+0.10
+0.25
+0.50
+0.75
+0.80
+0.90
+```
+
+---
+
+## Example Use Cases
+
+### CRM Campaign Prioritization
+
+Target only the users most likely to convert.
+
+### Marketing Optimization
+
+Focus spend on high-intent users.
+
+### Push Notification Targeting
+
+Send personalized nudges to users with strong purchase intent.
+
+### Customer Segmentation
+
+Create High, Medium, and Low Intent user segments.
+
+### Conversion Analytics
+
+Measure conversion likelihood across acquisition channels and user cohorts.
+
+---
+
+## Machine Learning Workflow
+
+```text
+Raw User Data
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Missing Value Handling
+      │
+      ▼
+Categorical Encoding
+      │
+      ▼
+Train/Test Split
+      │
+      ▼
+LightGBM Training
+      │
+      ▼
+Model Evaluation
+      │
+      ▼
+Probability Scoring
+      │
+      ▼
+User Ranking
+      │
+      ▼
+Target User Export
+```
+
+---
+
+## Future Improvements
+
+Potential enhancements:
+
+* SHAP Explainability
+* Hyperparameter Optimization
+* Automated Feature Selection
+* MLflow Experiment Tracking
+* XGBoost Benchmarking
+* CatBoost Benchmarking
+* Model Monitoring
+* API Deployment
+* Real-Time Scoring
+
+---
+
+## Disclaimer
+
+This repository is intended for educational and commercial machine learning applications.
+
+The included sample data is synthetic and does not contain any real user information.
+
+---
+
+## License
+
+MIT License
+
+Feel free to use, modify, and distribute this project under the terms of the MIT License.
