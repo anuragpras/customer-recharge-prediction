@@ -1,0 +1,166 @@
+Feature,Score_Bucket,Analysis_Type,Value_Mean,Value_Median,Top_Category,Users
+SignupDay,0.00-0.20 Very Low,categorical,,,Fri,
+SignupDay,0.20-0.40 Low,categorical,,,Wed,
+SignupDay,0.40-0.60 Medium,categorical,,,Thu,
+SignupDay,0.60-0.80 High,categorical,,,Fri,
+SignupDay,0.80-1.00 Very High,categorical,,,Sun,
+SignupTime,0.00-0.20 Very Low,numeric,12.392,13.0,,693
+SignupTime,0.20-0.40 Low,numeric,10.824,10.0,,613
+SignupTime,0.40-0.60 Medium,numeric,10.631,11.0,,157
+SignupTime,0.60-0.80 High,numeric,12.37,14.0,,27
+SignupTime,0.80-1.00 Very High,numeric,12.2,13.0,,10
+DeviceType,0.00-0.20 Very Low,categorical,,,Android,
+DeviceType,0.20-0.40 Low,categorical,,,Android,
+DeviceType,0.40-0.60 Medium,categorical,,,Android,
+DeviceType,0.60-0.80 High,categorical,,,Android,
+DeviceType,0.80-1.00 Very High,categorical,,,iOS,
+IsFreeConsultationTaken,0.00-0.20 Very Low,numeric,0.24,0.0,,693
+IsFreeConsultationTaken,0.20-0.40 Low,numeric,0.414,0.0,,613
+IsFreeConsultationTaken,0.40-0.60 Medium,numeric,0.548,1.0,,157
+IsFreeConsultationTaken,0.60-0.80 High,numeric,0.741,1.0,,27
+IsFreeConsultationTaken,0.80-1.00 Very High,numeric,0.5,0.5,,10
+CountryId,0.00-0.20 Very Low,numeric,1.381,1.0,,693
+CountryId,0.20-0.40 Low,numeric,1.307,1.0,,613
+CountryId,0.40-0.60 Medium,numeric,1.357,1.0,,157
+CountryId,0.60-0.80 High,numeric,1.148,1.0,,27
+CountryId,0.80-1.00 Very High,numeric,1.4,1.0,,10
+Gender,0.00-0.20 Very Low,categorical,,,Male,
+Gender,0.20-0.40 Low,categorical,,,Male,
+Gender,0.40-0.60 Medium,categorical,,,Female,
+Gender,0.60-0.80 High,categorical,,,Male,
+Gender,0.80-1.00 Very High,categorical,,,Female,
+Age,0.00-0.20 Very Low,numeric,30.453,31.0,,693
+Age,0.20-0.40 Low,numeric,30.351,30.0,,613
+Age,0.40-0.60 Medium,numeric,28.433,28.0,,157
+Age,0.60-0.80 High,numeric,30.407,32.0,,27
+Age,0.80-1.00 Very High,numeric,35.3,34.0,,10
+City,0.00-0.20 Very Low,categorical,,,Delhi,
+City,0.20-0.40 Low,categorical,,,Jaipur,
+City,0.40-0.60 Medium,categorical,,,Mumbai,
+City,0.60-0.80 High,categorical,,,Pune,
+City,0.80-1.00 Very High,categorical,,,Delhi,
+State,0.00-0.20 Very Low,categorical,,,Unknown,
+State,0.20-0.40 Low,categorical,,,Karnataka,
+State,0.40-0.60 Medium,categorical,,,Rajasthan,
+State,0.60-0.80 High,categorical,,,MP,
+State,0.80-1.00 Very High,categorical,,,Maharashtra,
+HasTakenChatConsultation,0.00-0.20 Very Low,numeric,0.183,0.0,,693
+HasTakenChatConsultation,0.20-0.40 Low,numeric,0.356,0.0,,613
+HasTakenChatConsultation,0.40-0.60 Medium,numeric,0.51,1.0,,157
+HasTakenChatConsultation,0.60-0.80 High,numeric,0.37,0.0,,27
+HasTakenChatConsultation,0.80-1.00 Very High,numeric,0.3,0.0,,10
+HasTakenCallConsultation,0.00-0.20 Very Low,numeric,0.163,0.0,,693
+HasTakenCallConsultation,0.20-0.40 Low,numeric,0.243,0.0,,613
+HasTakenCallConsultation,0.40-0.60 Medium,numeric,0.395,0.0,,157
+HasTakenCallConsultation,0.60-0.80 High,numeric,0.519,1.0,,27
+HasTakenCallConsultation,0.80-1.00 Very High,numeric,0.5,0.5,,10
+HasTakenOtherConsultation,0.00-0.20 Very Low,numeric,0.102,0.0,,693
+HasTakenOtherConsultation,0.20-0.40 Low,numeric,0.078,0.0,,613
+HasTakenOtherConsultation,0.40-0.60 Medium,numeric,0.051,0.0,,157
+HasTakenOtherConsultation,0.60-0.80 High,numeric,0.037,0.0,,27
+HasTakenOtherConsultation,0.80-1.00 Very High,numeric,0.1,0.0,,10
+HasRated,0.00-0.20 Very Low,numeric,0.208,0.0,,693
+HasRated,0.20-0.40 Low,numeric,0.17,0.0,,613
+HasRated,0.40-0.60 Medium,numeric,0.21,0.0,,157
+HasRated,0.60-0.80 High,numeric,0.148,0.0,,27
+HasRated,0.80-1.00 Very High,numeric,0.2,0.0,,10
+HasReviewed,0.00-0.20 Very Low,numeric,0.101,0.0,,693
+HasReviewed,0.20-0.40 Low,numeric,0.093,0.0,,613
+HasReviewed,0.40-0.60 Medium,numeric,0.102,0.0,,157
+HasReviewed,0.60-0.80 High,numeric,0.111,0.0,,27
+HasReviewed,0.80-1.00 Very High,numeric,0.2,0.0,,10
+HadPositiveInteraction,0.00-0.20 Very Low,numeric,0.127,0.0,,693
+HadPositiveInteraction,0.20-0.40 Low,numeric,0.325,0.0,,613
+HadPositiveInteraction,0.40-0.60 Medium,numeric,0.363,0.0,,157
+HadPositiveInteraction,0.60-0.80 High,numeric,0.259,0.0,,27
+HadPositiveInteraction,0.80-1.00 Very High,numeric,0.4,0.0,,10
+HadNegativeInteraction,0.00-0.20 Very Low,numeric,0.098,0.0,,693
+HadNegativeInteraction,0.20-0.40 Low,numeric,0.039,0.0,,613
+HadNegativeInteraction,0.40-0.60 Medium,numeric,0.019,0.0,,157
+HadNegativeInteraction,0.60-0.80 High,numeric,0.0,0.0,,27
+HadNegativeInteraction,0.80-1.00 Very High,numeric,0.0,0.0,,10
+HasUsedGift,0.00-0.20 Very Low,numeric,0.144,0.0,,693
+HasUsedGift,0.20-0.40 Low,numeric,0.144,0.0,,613
+HasUsedGift,0.40-0.60 Medium,numeric,0.185,0.0,,157
+HasUsedGift,0.60-0.80 High,numeric,0.148,0.0,,27
+HasUsedGift,0.80-1.00 Very High,numeric,0.1,0.0,,10
+app_version,0.00-0.20 Very Low,categorical,,,2.0,
+app_version,0.20-0.40 Low,categorical,,,1.0,
+app_version,0.40-0.60 Medium,categorical,,,1.2,
+app_version,0.60-0.80 High,categorical,,,2.0,
+app_version,0.80-1.00 Very High,categorical,,,1.1,
+device_manufacturer,0.00-0.20 Very Low,categorical,,,OnePlus,
+device_manufacturer,0.20-0.40 Low,categorical,,,Oppo,
+device_manufacturer,0.40-0.60 Medium,categorical,,,Vivo,
+device_manufacturer,0.60-0.80 High,categorical,,,Oppo,
+device_manufacturer,0.80-1.00 Very High,categorical,,,Vivo,
+device_name,0.00-0.20 Very Low,categorical,,,A12,
+device_name,0.20-0.40 Low,categorical,,,Nord,
+device_name,0.40-0.60 Medium,categorical,,,iPhone 13,
+device_name,0.60-0.80 High,categorical,,,Reno,
+device_name,0.80-1.00 Very High,categorical,,,Nord,
+isp,0.00-0.20 Very Low,categorical,,,Vi,
+isp,0.20-0.40 Low,categorical,,,BSNL,
+isp,0.40-0.60 Medium,categorical,,,BSNL,
+isp,0.60-0.80 High,categorical,,,Airtel,
+isp,0.80-1.00 Very High,categorical,,,BSNL,
+language,0.00-0.20 Very Low,categorical,,,Marathi,
+language,0.20-0.40 Low,categorical,,,Hindi,
+language,0.40-0.60 Medium,categorical,,,English,
+language,0.60-0.80 High,categorical,,,Tamil,
+language,0.80-1.00 Very High,categorical,,,English,
+os_name,0.00-0.20 Very Low,categorical,,,Android,
+os_name,0.20-0.40 Low,categorical,,,Android,
+os_name,0.40-0.60 Medium,categorical,,,Android,
+os_name,0.60-0.80 High,categorical,,,Android,
+os_name,0.80-1.00 Very High,categorical,,,Android,
+os_version,0.00-0.20 Very Low,categorical,,,13,
+os_version,0.20-0.40 Low,categorical,,,17,
+os_version,0.40-0.60 Medium,categorical,,,17,
+os_version,0.60-0.80 High,categorical,,,17,
+os_version,0.80-1.00 Very High,categorical,,,12,
+platform,0.00-0.20 Very Low,categorical,,,app,
+platform,0.20-0.40 Low,categorical,,,app,
+platform,0.40-0.60 Medium,categorical,,,app,
+platform,0.60-0.80 High,categorical,,,app,
+platform,0.80-1.00 Very High,categorical,,,app,
+store,0.00-0.20 Very Low,categorical,,,play_store,
+store,0.20-0.40 Low,categorical,,,play_store,
+store,0.40-0.60 Medium,categorical,,,play_store,
+store,0.60-0.80 High,categorical,,,play_store,
+store,0.80-1.00 Very High,categorical,,,play_store,
+lifetime_session_count,0.00-0.20 Very Low,numeric,7.86,7.0,,693
+lifetime_session_count,0.20-0.40 Low,numeric,7.979,8.0,,613
+lifetime_session_count,0.40-0.60 Medium,numeric,8.643,8.0,,157
+lifetime_session_count,0.60-0.80 High,numeric,8.704,9.0,,27
+lifetime_session_count,0.80-1.00 Very High,numeric,7.5,8.0,,10
+session_count,0.00-0.20 Very Low,numeric,2.983,3.0,,693
+session_count,0.20-0.40 Low,numeric,3.09,3.0,,613
+session_count,0.40-0.60 Medium,numeric,3.217,3.0,,157
+session_count,0.60-0.80 High,numeric,3.593,4.0,,27
+session_count,0.80-1.00 Very High,numeric,2.8,3.0,,10
+time_spent,0.00-0.20 Very Low,numeric,215.19,196.0,,693
+time_spent,0.20-0.40 Low,numeric,408.033,384.3,,613
+time_spent,0.40-0.60 Medium,numeric,649.593,649.5,,157
+time_spent,0.60-0.80 High,numeric,966.533,1029.9,,27
+time_spent,0.80-1.00 Very High,numeric,1604.54,1545.45,,10
+Acquisition Source,0.00-0.20 Very Low,categorical,,,organic,
+Acquisition Source,0.20-0.40 Low,categorical,,,google,
+Acquisition Source,0.40-0.60 Medium,categorical,,,google,
+Acquisition Source,0.60-0.80 High,categorical,,,referral,
+Acquisition Source,0.80-1.00 Very High,categorical,,,meta,
+Campaign,0.00-0.20 Very Low,categorical,,,brand,
+Campaign,0.20-0.40 Low,categorical,,,activation,
+Campaign,0.40-0.60 Medium,categorical,,,brand,
+Campaign,0.60-0.80 High,categorical,,,none,
+Campaign,0.80-1.00 Very High,categorical,,,activation,
+Campaign Adgroup,0.00-0.20 Very Low,categorical,,,none,
+Campaign Adgroup,0.20-0.40 Low,categorical,,,ag3,
+Campaign Adgroup,0.40-0.60 Medium,categorical,,,none,
+Campaign Adgroup,0.60-0.80 High,categorical,,,ag1,
+Campaign Adgroup,0.80-1.00 Very High,categorical,,,none,
+Campaign Group,0.00-0.20 Very Low,categorical,,,none,
+Campaign Group,0.20-0.40 Low,categorical,,,organic,
+Campaign Group,0.40-0.60 Medium,categorical,,,organic,
+Campaign Group,0.60-0.80 High,categorical,,,paid,
+Campaign Group,0.80-1.00 Very High,categorical,,,organic,
